@@ -19,7 +19,7 @@ lang: ja
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Inter+Tight:wght@500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap">
-  <link rel="stylesheet" href="../assets/style.css?v=c2">
+  <link rel="stylesheet" href="../assets/style.css?v=c3">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -45,41 +45,32 @@ lang: ja
   </script>
 </head>
 <body>
-  <div class="page">
-    <header class="bar">
-      <a class="name" href="#top">チェ・ジュンヒョン</a>
-      <nav aria-label="メイン">
-        <a href="#work">仕事</a>
-        <a href="#research">研究</a>
-        <a href="#about">プロフィール</a>
-        {% if site.posts.size > 0 %}<a href="#writing">記事</a>{% endif %}
-        <a class="lang" href="../" lang="en" hreflang="en">English</a>
-      </nav>
-    </header>
-
-    <main id="top">
-      <section class="hero">
-        <div>
-          <p class="mono">デジタルアセット・カストディ基盤エンジニア · 東京</p>
-          <h1>鍵は、<br>ひとりでは署名しない。</h1>
-          <p class="lede">株式会社インタートレードのブロックチェーンエンジニア、チェ・ジュンヒョンです。金融機関向けのデジタルアセット・カストディ基盤を、PoCから技術説明、構築まで担当しています。直近では、顧客のHSMに保管した鍵で署名するPKCS#11署名サーバーと、トークン発行時の署名前検証を設計・開発しました。大学院では、金融ショックが国境を越えて広がる仕組みを研究しました。</p>
-          <p class="line-links">
+  <div class="page split">
+    <aside class="side">
+      <div class="side-in">
+        <p class="mono">ブロックチェーンエンジニア · 東京</p>
+        <h1 class="who">チェ・ジュンヒョン</h1>
+        <p class="tag">金融機関向けのデジタルアセット・カストディ基盤をつくり、それを金融機関に説明する仕事をしています。</p>
+        <nav aria-label="Main">
+          <ul class="side-nav"><li><a href="#about">プロフィール</a></li><li><a href="#work">仕事</a></li><li><a href="#research">研究</a></li>{% if site.posts.size > 0 %}<li><a href="#writing">記事</a></li>{% endif %}<li><a href="#background">経歴</a></li></ul>
+        </nav>
+        <p class="line-links side-links">
             <a href="mailto:smiledanny@gmail.com">smiledanny@gmail.com</a>
             <a href="https://www.linkedin.com/in/junhyunchae" rel="me">LinkedIn</a>
             <a href="https://github.com/Junhyun-Chae" rel="me">GitHub</a>
             <a href="https://orcid.org/0009-0007-5531-7071" rel="me">ORCID</a>
           </p>
-        </div>
-        <figure>
-          <img src="../assets/img/portrait.jpg" width="840" height="1116" alt="スーツ姿で鏡越しに写るチェ・ジュンヒョン" fetchpriority="high">
-        </figure>
-      </section>
+        <p class="side-lang"><a class="lang" href="../" lang="en" hreflang="en">English</a></p>
+      </div>
+    </aside>
 
-      <div class="panel">
-        <div class="panel-head">
-          <span class="mono">署名までの流れ</span>
-          <span class="mono">簡略図</span>
-        </div>
+    <main class="content" id="top">
+      <section class="blk" id="about">
+        <h2 class="blk-h">プロフィール</h2>
+        <p class="lede">株式会社インタートレードのブロックチェーンエンジニア、チェ・ジュンヒョンです。金融機関向けのデジタルアセット・カストディ基盤を、PoCから技術説明、構築まで担当しています。直近では、顧客のHSMに保管した鍵で署名するPKCS#11署名サーバーと、トークン発行時の署名前検証を設計・開発しました。大学院では、金融ショックが国境を越えて広がる仕組みを研究しました。</p>
+        <p>韓国語が母語、日本語が仕事の言語、英語は海外ベンダーとやり取りする言語です。ソウルで育ち、神戸で修士課程を終え、いまは東京で働いています。</p>
+        <div class="panel">
+        <div class="panel-head"><span class="mono">取引が署名されるまで</span></div>
 
         <svg class="flow" viewBox="-2 0 1044 112" role="img" aria-label="取引はカストディ基盤で承認され、署名サーバーを通ってHSMで署名され、チェーンに送られます。">
           <defs>
@@ -161,37 +152,11 @@ lang: ja
 
         <p class="caption">緑の部分が、私が設計・開発した署名サーバーです。</p>
       </div>
+      </section>
 
-      <section class="sec" id="work">
-        <div class="sec-head">
-          <span class="mono">01 · 仕事</span>
-          <div>
-            <h2>金融機関のための<br>カストディ基盤。</h2>
-            <p>株式会社インタートレード（東証 3747）ビジネス企画部／東京</p>
-          </div>
-        </div>
-
-        <div class="cards">
-          <div class="card">
-            <span class="mono">署名サーバー</span>
-            <h3>HSM署名サーバー</h3>
-            <p>機関向けカストディ基盤が、顧客のHSMに保管した鍵で署名できるようにするPKCS#11署名サーバーを設計・開発しました。</p>
-            <p class="mono tags">pkcs#11 · hsm · custody</p>
-          </div>
-          <div class="card">
-            <span class="mono">運用</span>
-            <h3>トークン発行・償還の承認統制</h3>
-            <p>パブリックブロックチェーン上のトークン発行・償還について、署名前の検証と承認ワークフローをAWS上で構築しました。</p>
-            <p class="mono tags">aws · tokenization · approval workflow</p>
-          </div>
-          <div class="card">
-            <span class="mono">顧客</span>
-            <h3>顧客とベンダーの前に立つ</h3>
-            <p>金融機関に対してPoCを構築し、技術説明を行っています。海外のカストディ基盤ベンダーとは英語で連携上の課題に対応し、カストディ基盤の技術評価も行います。</p>
-            <p class="mono tags">poc · presentations · vendor integration</p>
-          </div>
-        </div>
-
+      <section class="blk" id="work">
+        <h2 class="blk-h">仕事</h2>
+        <p class="blk-note">株式会社インタートレード（東証 3747）ビジネス企画部</p>
         <div class="exp">
           <div class="exp-org">
             <h3>株式会社インタートレード</h3>
@@ -217,15 +182,9 @@ lang: ja
         </div>
       </section>
 
-      <section class="sec" id="research">
-        <div class="sec-head">
-          <span class="mono">02 · 研究</span>
-          <div>
-            <h2>金融ショックは<br>国境をどう越えるか。</h2>
-            <p>兵庫県立大学大学院での修士研究（指導教員：井上寛康 教授）</p>
-          </div>
-        </div>
-
+      <section class="blk" id="research">
+        <h2 class="blk-h">研究</h2>
+        <p class="blk-note">兵庫県立大学大学院での修士研究（指導教員：井上寛康 教授）</p>
         <div class="research">
           <img src="../assets/img/talk.jpg" width="1182" height="665" loading="lazy" alt="多層システミックリスクモデルの結果を発表するチェ・ジュンヒョン">
           <div class="paper">
@@ -251,15 +210,24 @@ lang: ja
           <li><span class="mono">2025.9.10</span><span class="what"><a href="https://pub.confit.atlas.jp/ja/event/society2025/presentation/N-1-14" lang="en">Cross-border Financial Distress via Multi-layer DebtRank</a></span><span class="where">電子情報通信学会ソサイエティ大会 · 岡山 · 口頭発表 · 英語</span></li>
           <li><span class="mono">2025.1.22</span><span class="what"><a href="https://isarob.org/symposium/programs/arob30/Abstracts.pdf" lang="en">A Quantitative Analysis of Financial Distress Propagation in International Networks Utilizing DebtRank and a Multi-layer Approach</a></span><span class="where">AROB-ISBC 2025（第30回）· 別府 · 口頭発表 · 英語 · Young Author Award</span></li>
         </ul>
+        
         <p class="thesis">修士論文（2026）：マルチレイヤDebtRankを用いた国際ネットワークにおける金融リスク伝播の定量的分析</p>
       </section>
 
-      <section class="sec" id="about">
-        <div class="sec-head">
-          <span class="mono">03 · 経歴</span>
-          <h2>ソウル、神戸、東京。</h2>
-        </div>
+      {% if site.posts.size > 0 %}
+      <section class="blk" id="writing">
+        <h2 class="blk-h">記事</h2>
+        <ul class="talks posts">
+          {% for post in site.posts limit: 6 %}
+          <li><span class="mono">{{ post.date | date: "%Y.%-m.%-d" }}</span><span class="what"><a href="{{ post.url | relative_url }}"{% if post.lang != 'ja' %} lang="en"{% endif %}>{{ post.title }}</a></span><span class="where">{% if post.lang == 'ja' %}日本語{% else %}英語{% endif %}</span></li>
+          {% endfor %}
+        </ul>
+        {% if site.posts.size > 6 %}<p class="thesis"><a href="{{ '/writing/' | relative_url }}">すべての記事</a></p>{% endif %}
+      </section>
+      {% endif %}
 
+      <section class="blk" id="background">
+        <h2 class="blk-h">経歴</h2>
         <div class="bg">
           <div>
             <span class="mono">学歴</span>
@@ -298,50 +266,18 @@ lang: ja
             <li><a href="https://junhyun-chae.github.io/korean-word/">刻印 Kokuin</a><span>日本語で韓国語の単語を覚えるためのWebアプリ（分散反復、手書き練習）</span></li>
           </ul>
         </div>
-
-        <div class="life">
-          <img src="../assets/img/offclock.jpg" width="1012" height="1124" loading="lazy" alt="屋外でピースサインをして笑うチェ・ジュンヒョン">
-          <div>
-            <ul class="route">
+        <ul class="route">
               <li><b>ソウル</b><span>育った街 · コンピュータ工学を学ぶ</span></li>
               <li><b>神戸</b><span>修士課程 · 初めての論文と受賞</span></li>
               <li><b>東京</b><span>インタートレードでデジタルアセット・カストディ</span></li>
             </ul>
-            <p>韓国語が母語、日本語が仕事の言語、英語は海外ベンダーとやり取りする言語です。</p>
-          </div>
-        </div>
       </section>
 
-      {% if site.posts.size > 0 %}
-      <section class="sec" id="writing">
-        <div class="sec-head">
-          <span class="mono">04 · 記事</span>
-          <h2>仕事と研究のメモ。</h2>
-        </div>
-        <ul class="talks posts" aria-label="記事">
-          {% for post in site.posts limit: 5 %}
-          <li><span class="mono">{{ post.date | date: "%Y.%-m.%-d" }}</span><span class="what"><a href="{{ post.url | relative_url }}"{% if post.lang != 'ja' %} lang="en"{% endif %}>{{ post.title }}</a></span><span class="where">{% if post.lang == 'ja' %}日本語{% else %}英語{% endif %}</span></li>
-          {% endfor %}
-        </ul>
-        {% if site.posts.size > 5 %}<p class="thesis"><a href="{{ '/writing/' | relative_url }}">すべての記事</a></p>{% endif %}
-      </section>
-      {% endif %}
-
-      <section class="contact" id="contact">
-        <span class="mono">{% if site.posts.size > 0 %}05{% else %}04{% endif %} · 連絡先</span>
-        <div><a class="mail" href="mailto:smiledanny@gmail.com">smiledanny@gmail.com</a></div>
-        <p class="line-links">
-          <a href="https://www.linkedin.com/in/junhyunchae">LinkedIn</a>
-          <a href="https://github.com/Junhyun-Chae">GitHub</a>
-          <a href="https://orcid.org/0009-0007-5531-7071">ORCID</a>
-        </p>
-      </section>
+      <footer>
+        <span>© 2026 Junhyun Chae</span>
+        <span>東京</span>
+      </footer>
     </main>
-
-    <footer>
-      <span>© 2026 Junhyun Chae</span>
-      <span>東京</span>
-    </footer>
   </div>
 </body>
 </html>

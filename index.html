@@ -19,7 +19,7 @@ lang: en
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Inter+Tight:wght@500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
-  <link rel="stylesheet" href="assets/style.css?v=c2">
+  <link rel="stylesheet" href="assets/style.css?v=c3">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -45,41 +45,32 @@ lang: en
   </script>
 </head>
 <body>
-  <div class="page">
-    <header class="bar">
-      <a class="name" href="#top">Junhyun Chae</a>
-      <nav aria-label="Main">
-        <a href="#work">Work</a>
-        <a href="#research">Research</a>
-        <a href="#about">About</a>
-        {% if site.posts.size > 0 %}<a href="#writing">Writing</a>{% endif %}
-        <a class="lang" href="ja/" lang="ja" hreflang="ja">日本語</a>
-      </nav>
-    </header>
-
-    <main id="top">
-      <section class="hero">
-        <div>
-          <p class="mono">Digital asset custody engineer · Tokyo</p>
-          <h1>Keys that never<br>sign alone.</h1>
-          <p class="lede">I'm Junhyun Chae, a blockchain engineer at InterTrade in Tokyo. I build digital asset custody for financial institutions and present it to them, from proof of concept to delivery. Recent work: a PKCS#11 signing server that signs with keys held in the customer's HSM, and pre-signing checks for token issuance. Before this, I researched how financial shocks travel between countries.</p>
-          <p class="line-links">
+  <div class="page split">
+    <aside class="side">
+      <div class="side-in">
+        <p class="mono">Blockchain engineer · Tokyo</p>
+        <h1 class="who">Junhyun Chae</h1>
+        <p class="tag">I build digital asset custody for financial institutions, and I’m the one who explains it to them.</p>
+        <nav aria-label="Main">
+          <ul class="side-nav"><li><a href="#about">About</a></li><li><a href="#work">Work</a></li><li><a href="#research">Research</a></li>{% if site.posts.size > 0 %}<li><a href="#writing">Writing</a></li>{% endif %}<li><a href="#background">Background</a></li></ul>
+        </nav>
+        <p class="line-links side-links">
             <a href="mailto:smiledanny@gmail.com">smiledanny@gmail.com</a>
             <a href="https://www.linkedin.com/in/junhyunchae" rel="me">LinkedIn</a>
             <a href="https://github.com/Junhyun-Chae" rel="me">GitHub</a>
             <a href="https://orcid.org/0009-0007-5531-7071" rel="me">ORCID</a>
           </p>
-        </div>
-        <figure>
-          <img src="assets/img/portrait.jpg" width="840" height="1116" alt="Junhyun Chae in a dark suit, taking a mirror photo" fetchpriority="high">
-        </figure>
-      </section>
+        <p class="side-lang"><a class="lang" href="ja/" lang="ja" hreflang="ja">日本語</a></p>
+      </div>
+    </aside>
 
-      <div class="panel">
-        <div class="panel-head">
-          <span class="mono">How a transaction gets signed</span>
-          <span class="mono">Simplified</span>
-        </div>
+    <main class="content" id="top">
+      <section class="blk" id="about">
+        <h2 class="blk-h">About</h2>
+        <p class="lede">I'm Junhyun Chae, a blockchain engineer at InterTrade in Tokyo. I build digital asset custody for financial institutions and present it to them, from proof of concept to delivery. Recent work: a PKCS#11 signing server that signs with keys held in the customer's HSM, and pre-signing checks for token issuance. Before this, I researched how financial shocks travel between countries.</p>
+        <p>Korean is my first language, Japanese is my working language, and English is how I work with vendors overseas. I grew up in Seoul, did my master’s in Kobe, and now work in Tokyo.</p>
+        <div class="panel">
+        <div class="panel-head"><span class="mono">How a transaction gets signed</span></div>
 
         <svg class="flow" viewBox="-2 0 1044 112" role="img" aria-label="A transaction is approved on the custody platform, goes through the signing server to the HSM, and the signed transaction is broadcast.">
           <defs>
@@ -161,37 +152,11 @@ lang: en
 
         <p class="caption">The highlighted step is the signing server I designed and built.</p>
       </div>
+      </section>
 
-      <section class="sec" id="work">
-        <div class="sec-head">
-          <span class="mono">01 · Work</span>
-          <div>
-            <h2>Custody for financial institutions.</h2>
-            <p>Business Planning Department, InterTrade (TSE: 3747), Tokyo.</p>
-          </div>
-        </div>
-
-        <div class="cards">
-          <div class="card">
-            <span class="mono">Signing server</span>
-            <h3>HSM signing server</h3>
-            <p>A PKCS#11 signing server that lets an institutional custody platform sign with keys held in a customer's HSM. Designed and built by me.</p>
-            <p class="mono tags">pkcs#11 · hsm · custody</p>
-          </div>
-          <div class="card">
-            <span class="mono">Operations</span>
-            <h3>Approval controls for tokens</h3>
-            <p>Pre-signing checks and an approval workflow for token issuance and redemption on a public blockchain, running on AWS.</p>
-            <p class="mono tags">aws · tokenization · approval workflow</p>
-          </div>
-          <div class="card">
-            <span class="mono">Customers</span>
-            <h3>In front of customers and vendors</h3>
-            <p>I build proofs of concept and present technical designs to financial institutions, in Japanese. With overseas custody vendors I work in English on integration issues, and I evaluate custody solutions technically.</p>
-            <p class="mono tags">poc · presentations · vendor integration</p>
-          </div>
-        </div>
-
+      <section class="blk" id="work">
+        <h2 class="blk-h">Work</h2>
+        <p class="blk-note">Business Planning Department, InterTrade (TSE: 3747)</p>
         <div class="exp">
           <div class="exp-org">
             <h3>InterTrade Co., Ltd.</h3>
@@ -217,15 +182,9 @@ lang: en
         </div>
       </section>
 
-      <section class="sec" id="research">
-        <div class="sec-head">
-          <span class="mono">02 · Research</span>
-          <div>
-            <h2>How shocks travel between countries.</h2>
-            <p>Master's research at the University of Hyogo with Prof. Hiroyasu Inoue.</p>
-          </div>
-        </div>
-
+      <section class="blk" id="research">
+        <h2 class="blk-h">Research</h2>
+        <p class="blk-note">Master’s research at the University of Hyogo with Prof. Hiroyasu Inoue.</p>
         <div class="research">
           <img src="assets/img/talk.jpg" width="1182" height="665" loading="lazy" alt="Junhyun Chae presenting results of the multilayer systemic risk model">
           <div class="paper">
@@ -251,15 +210,24 @@ lang: en
           <li><span class="mono">Sep 10, 2025</span><span class="what"><a href="https://pub.confit.atlas.jp/ja/event/society2025/presentation/N-1-14">Cross-border Financial Distress via Multi-layer DebtRank</a></span><span class="where">IEICE Society Conference, Okayama · Oral, English</span></li>
           <li><span class="mono">Jan 22, 2025</span><span class="what"><a href="https://isarob.org/symposium/programs/arob30/Abstracts.pdf">A Quantitative Analysis of Financial Distress Propagation in International Networks Utilizing DebtRank and a Multi-layer Approach</a></span><span class="where">AROB-ISBC 2025, Beppu · Oral, English · Young Author Award</span></li>
         </ul>
+        
         <p class="thesis">Master's thesis (2026): Quantitative Analysis of Financial Risk Propagation in International Networks Using Multilayer DebtRank.</p>
       </section>
 
-      <section class="sec" id="about">
-        <div class="sec-head">
-          <span class="mono">03 · Background</span>
-          <h2>Seoul, Kobe, Tokyo.</h2>
-        </div>
+      {% if site.posts.size > 0 %}
+      <section class="blk" id="writing">
+        <h2 class="blk-h">Writing</h2>
+        <ul class="talks posts">
+          {% for post in site.posts limit: 6 %}
+          <li><span class="mono">{{ post.date | date: "%b %-d, %Y" }}</span><span class="what"><a href="{{ post.url | relative_url }}"{% if post.lang == 'ja' %} lang="ja"{% endif %}>{{ post.title }}</a></span><span class="where">{% if post.lang == 'ja' %}Japanese{% else %}English{% endif %}</span></li>
+          {% endfor %}
+        </ul>
+        {% if site.posts.size > 6 %}<p class="thesis"><a href="{{ '/writing/' | relative_url }}">All posts</a></p>{% endif %}
+      </section>
+      {% endif %}
 
+      <section class="blk" id="background">
+        <h2 class="blk-h">Background</h2>
         <div class="bg">
           <div>
             <span class="mono">Education</span>
@@ -298,50 +266,18 @@ lang: en
             <li><a href="https://junhyun-chae.github.io/korean-word/">Kokuin</a><span>A web app for learning Korean vocabulary from Japanese: spaced repetition and handwriting practice.</span></li>
           </ul>
         </div>
-
-        <div class="life">
-          <img src="assets/img/offclock.jpg" width="1012" height="1124" loading="lazy" alt="Junhyun Chae smiling outdoors with peace signs">
-          <div>
-            <ul class="route">
+        <ul class="route">
               <li><b>Seoul</b><span>Grew up · studied computer engineering</span></li>
               <li><b>Kobe</b><span>Master's · first paper and first award</span></li>
               <li><b>Tokyo</b><span>Digital asset custody at InterTrade</span></li>
             </ul>
-            <p>Korean is my first language, Japanese is my working language, and English is how I work with vendors overseas.</p>
-          </div>
-        </div>
       </section>
 
-      {% if site.posts.size > 0 %}
-      <section class="sec" id="writing">
-        <div class="sec-head">
-          <span class="mono">04 · Writing</span>
-          <h2>Notes from the work.</h2>
-        </div>
-        <ul class="talks posts" aria-label="Posts">
-          {% for post in site.posts limit: 5 %}
-          <li><span class="mono">{{ post.date | date: "%b %-d, %Y" }}</span><span class="what"><a href="{{ post.url | relative_url }}"{% if post.lang == 'ja' %} lang="ja"{% endif %}>{{ post.title }}</a></span><span class="where">{% if post.lang == 'ja' %}Japanese{% else %}English{% endif %}</span></li>
-          {% endfor %}
-        </ul>
-        {% if site.posts.size > 5 %}<p class="thesis"><a href="{{ '/writing/' | relative_url }}">All posts</a></p>{% endif %}
-      </section>
-      {% endif %}
-
-      <section class="contact" id="contact">
-        <span class="mono">{% if site.posts.size > 0 %}05{% else %}04{% endif %} · Contact</span>
-        <div><a class="mail" href="mailto:smiledanny@gmail.com">smiledanny@gmail.com</a></div>
-        <p class="line-links">
-          <a href="https://www.linkedin.com/in/junhyunchae">LinkedIn</a>
-          <a href="https://github.com/Junhyun-Chae">GitHub</a>
-          <a href="https://orcid.org/0009-0007-5531-7071">ORCID</a>
-        </p>
-      </section>
+      <footer>
+        <span>© 2026 Junhyun Chae</span>
+        <span>Tokyo</span>
+      </footer>
     </main>
-
-    <footer>
-      <span>© 2026 Junhyun Chae</span>
-      <span>Tokyo</span>
-    </footer>
   </div>
 </body>
 </html>
