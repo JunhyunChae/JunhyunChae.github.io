@@ -3,3 +3,8 @@
 .env
 .env.*
 _mock/
+_site/
+.jekyll-cache/
+.sass-cache/
+vendor/
+Gemfile.lock

@@ -1,0 +1,14 @@
+---
+layout: default
+title: Writing
+---
+<h1>Writing</h1>
+{% if site.posts.size == 0 %}
+<p class="dim">Nothing here yet.</p>
+{% else %}
+<ul class="posts">
+{% for post in site.posts %}
+  <li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time> <a href="{{ post.url | relative_url }}"{% if post.lang == 'ja' %} lang="ja"{% endif %}>{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+{% endif %}

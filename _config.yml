@@ -1,0 +1,17 @@
+title: Junhyun Chae
+url: https://junhyun-chae.github.io
+description: >-
+  Junhyun Chae is a blockchain engineer in Tokyo building digital asset custody
+  for financial institutions, with a research background in cross-country systemic risk.
+timezone: Asia/Tokyo
+markdown: kramdown
+permalink: /writing/:year/:month/:title/
+exclude:
+  - README.md
+  - NOTES.local.md
+  - _mock
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post, lang: en }
+  - scope: { path: "ja" }
+    values: { lang: ja }

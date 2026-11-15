@@ -1,0 +1,30 @@
+<!doctype html>
+{%- assign lang = page.lang | default: "en" %}
+<html lang="{{ lang }}">
+<head>
+{% include head.html %}
+{% if page.url == "/" or page.url == "/ja/" %}{% include person.html %}{% endif %}
+</head>
+<body>
+<header class="top">
+  <a class="me" href="{% if lang == 'ja' %}{{ '/ja/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">{% if lang == 'ja' %}チェ・ジュンヒョン{% else %}Junhyun Chae{% endif %}</a>
+  <nav>
+    {%- if site.posts.size > 0 %}
+    <a href="{{ '/writing/' | relative_url }}">{% if lang == 'ja' %}記事{% else %}Writing{% endif %}</a>
+    {%- endif %}
+    {%- if page.alt %}
+    <a href="{{ page.alt | relative_url }}" lang="{% if lang == 'ja' %}en{% else %}ja{% endif %}">{% if lang == 'ja' %}English{% else %}日本語{% endif %}</a>
+    {%- endif %}
+  </nav>
+</header>
+<main>
+{{ content }}
+</main>
+<footer>
+  <a href="mailto:smiledanny@gmail.com">smiledanny@gmail.com</a>
+  <a href="https://www.linkedin.com/in/junhyunchae" rel="me">LinkedIn</a>
+  <a href="https://github.com/Junhyun-Chae" rel="me">GitHub</a>
+  <a href="https://orcid.org/0009-0007-5531-7071" rel="me">ORCID</a>
+</footer>
+</body>
+</html>
