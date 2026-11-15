@@ -1008,3 +1008,40 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* Signing flow inside the content column: the wide version is too small here */
+.content .panel {
+  display: grid;
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+  gap: 8px 44px;
+  align-items: center;
+  padding: 26px 32px 28px;
+}
+.content .panel-head {
+  grid-column: 1 / -1;
+  margin-bottom: 10px;
+}
+.content .flow {
+  display: none;
+}
+.content .flow-v {
+  display: block;
+  max-width: 340px;
+  margin: 0;
+}
+.content .caption {
+  margin: 0;
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.6;
+}
+@media (max-width: 720px) {
+  .content .panel {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 20px 18px 22px;
+  }
+  .content .flow-v {
+    margin: 0 auto;
+  }
+}
