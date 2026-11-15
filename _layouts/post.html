@@ -1,9 +1,9 @@
 ---
 layout: default
 ---
-<article class="post">
+<article class="article">
+  <span class="mono">{{ page.date | date: "%b %-d, %Y" }}</span>
   <h1>{{ page.title }}</h1>
-  <p class="meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time></p>
-  {{ content }}
+{{ content }}
+  <p class="line-links back"><a href="{{ '/writing/' | relative_url }}">{% if page.lang == 'ja' %}すべての記事{% else %}All posts{% endif %}</a></p>
 </article>
-<p class="back"><a href="{{ '/writing/' | relative_url }}">← {% if page.lang == 'ja' %}記事一覧{% else %}All writing{% endif %}</a></p>

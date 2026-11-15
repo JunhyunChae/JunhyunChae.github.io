@@ -1,67 +1,347 @@
 ---
-layout: default
-alt: /ja/
+lang: en
 ---
-<section class="intro">
-  <p>I'm a blockchain engineer at InterTrade (TSE: 3747) in Tokyo. I build digital asset custody for financial institutions and present it to them, from proof of concept to delivery. Recent work: a PKCS#11 signing server that signs with keys held in the customer's HSM, and pre-signing checks for token issuance.</p>
-  <p>I work in Japanese with financial institutions and in English with overseas vendors. Before this I studied how financial shocks spread between countries, which became a <a href="https://doi.org/10.3390/jrfm19030197">first-author paper</a> in the Journal of Risk and Financial Management.</p>
-</section>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Junhyun Chae | Digital Asset Custody Engineer</title>
+  <meta name="description" content="Junhyun Chae is a software engineer in Tokyo building institutional digital asset infrastructure (custody, HSM-based key management, token operations), with a research background in cross-country systemic risk.">
+  <meta name="theme-color" content="#f6f6f2">
+  <meta property="og:title" content="Junhyun Chae | Digital Asset Custody Engineer">
+  <meta property="og:description" content="Software engineer in Tokyo building custody infrastructure for financial institutions. First-author JRFM paper on systemic risk.">
+  <meta property="og:type" content="profile">
+  <meta property="og:image" content="https://junhyun-chae.github.io/assets/img/portrait.jpg">
+  <link rel="alternate" hreflang="en" href="https://junhyun-chae.github.io/">
+  <link rel="alternate" hreflang="ja" href="https://junhyun-chae.github.io/ja/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Inter+Tight:wght@500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="assets/style.css?v=c2">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Junhyun Chae",
+    "alternateName": ["チェ・ジュンヒョン", "채준현"],
+    "url": "https://junhyun-chae.github.io/",
+    "image": "https://junhyun-chae.github.io/assets/img/portrait.jpg",
+    "jobTitle": "Software Engineer",
+    "worksFor": { "@type": "Organization", "name": "InterTrade Co., Ltd." },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "University of Hyogo" },
+      { "@type": "CollegeOrUniversity", "name": "The University of Suwon" }
+    ],
+    "address": { "@type": "PostalAddress", "addressLocality": "Tokyo", "addressCountry": "JP" },
+    "knowsLanguage": ["ko", "ja", "en"],
+    "sameAs": [
+      "https://www.linkedin.com/in/junhyunchae",
+      "https://github.com/Junhyun-Chae",
+      "https://orcid.org/0009-0007-5531-7071"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="page">
+    <header class="bar">
+      <a class="name" href="#top">Junhyun Chae</a>
+      <nav aria-label="Main">
+        <a href="#work">Work</a>
+        <a href="#research">Research</a>
+        <a href="#about">About</a>
+        {% if site.posts.size > 0 %}<a href="#writing">Writing</a>{% endif %}
+        <a class="lang" href="ja/" lang="ja" hreflang="ja">日本語</a>
+      </nav>
+    </header>
 
-{% if site.posts.size > 0 %}
-<h2>Writing</h2>
-<ul class="posts">
-{% for post in site.posts limit: 5 %}
-  <li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time> <a href="{{ post.url | relative_url }}"{% if post.lang == 'ja' %} lang="ja"{% endif %}>{{ post.title }}</a></li>
-{% endfor %}
-</ul>
-{% endif %}
+    <main id="top">
+      <section class="hero">
+        <div>
+          <p class="mono">Digital asset custody engineer · Tokyo</p>
+          <h1>Keys that never<br>sign alone.</h1>
+          <p class="lede">I'm Junhyun Chae, a blockchain engineer at InterTrade in Tokyo. I build digital asset custody for financial institutions and present it to them, from proof of concept to delivery. Recent work: a PKCS#11 signing server that signs with keys held in the customer's HSM, and pre-signing checks for token issuance. Before this, I researched how financial shocks travel between countries.</p>
+          <p class="line-links">
+            <a href="mailto:smiledanny@gmail.com">smiledanny@gmail.com</a>
+            <a href="https://www.linkedin.com/in/junhyunchae" rel="me">LinkedIn</a>
+            <a href="https://github.com/Junhyun-Chae" rel="me">GitHub</a>
+            <a href="https://orcid.org/0009-0007-5531-7071" rel="me">ORCID</a>
+          </p>
+        </div>
+        <figure>
+          <img src="assets/img/portrait.jpg" width="840" height="1116" alt="Junhyun Chae in a dark suit, taking a mirror photo" fetchpriority="high">
+        </figure>
+      </section>
 
-<h2>Work</h2>
-<p class="org"><b>InterTrade Co., Ltd.</b> <span class="dim">· Tokyo · Apr 2026 – present</span></p>
+      <div class="panel">
+        <div class="panel-head">
+          <span class="mono">How a transaction gets signed</span>
+          <span class="mono">Simplified</span>
+        </div>
 
-<div class="role"><b>Software Engineer, Digital Asset Custody &amp; HSM Integration</b><span>Jun 2026 – present</span></div>
-<ul>
-  <li>Designed and built a PKCS#11 signing server that lets an institutional custody platform sign with keys held in a customer's HSM.</li>
-  <li>Built pre-signing checks and an approval workflow for token issuance and redemption on a public blockchain, running on AWS.</li>
-  <li>Build proofs of concept and present technical designs to financial institutions and their vendors.</li>
-  <li>Work with an overseas custody platform vendor in English on integration issues, and evaluated custody solutions technically.</li>
-</ul>
+        <svg class="flow" viewBox="-2 0 1044 112" role="img" aria-label="A transaction is approved on the custody platform, goes through the signing server to the HSM, and the signed transaction is broadcast.">
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="tip" d="M0 0L10 5L0 10z"/></marker>
+          </defs>
+          <path class="edge" d="M160 56H220" marker-end="url(#arrow)"/>
+          <path class="edge" d="M380 56H440" marker-end="url(#arrow)"/>
+          <path class="edge" d="M600 56H660" marker-end="url(#arrow)"/>
+          <path class="edge" d="M820 56H880" marker-end="url(#arrow)"/>
+          <circle class="token" r="4.5">
+            <animateMotion dur="6s" repeatCount="indefinite" path="M80 56H960"/>
+          </circle>
 
-<div class="role"><b>Software Engineer, FX Trading Systems</b><span>May – Jun 2026</span></div>
-<ul>
-  <li>Tested failure scenarios for an FX trading system (root-cause analysis and recovery), and built a Python tool that retrieves daily market rates.</li>
-</ul>
+          <rect class="box" x="0" y="24" width="160" height="64" rx="8"/>
+          <text class="node" x="80" y="52" text-anchor="middle">Transaction</text>
+          <text class="node-sub" x="80" y="70" text-anchor="middle">signing request</text>
 
-<h2>Research</h2>
-<p class="paper"><a href="https://doi.org/10.3390/jrfm19030197">Multilayer Propagation of Cross-Country Systemic Risk</a></p>
-<p>Junhyun Chae, Hiroyasu Inoue. <i>Journal of Risk and Financial Management</i> 19(3), 197. March 2026. <a href="https://github.com/Junhyun-Chae/multilayer-debtrank-financial-contagion">Code</a></p>
-<p>The model couples cross-border bank lending with trade for 20 economies over 2000–2023. Looking at both layers changes which countries look systemically important. This was my master's research at the University of Hyogo with Prof. Hiroyasu Inoue.</p>
+          <rect class="box" x="220" y="24" width="160" height="64" rx="8"/>
+          <text class="node" x="300" y="52" text-anchor="middle">Custody platform</text>
+          <text class="node-sub" x="300" y="70" text-anchor="middle">policy · approval</text>
 
-<figure>
-  <img src="{{ '/assets/img/talk.jpg' | relative_url }}" width="1182" height="665" loading="lazy" alt="Junhyun Chae presenting results of the multilayer systemic risk model">
-  <figcaption>Presenting the model at a conference.</figcaption>
-</figure>
+          <rect class="box ok" x="440" y="24" width="160" height="64" rx="8"/>
+          <rect class="pulse" x="440" y="24" width="160" height="64" rx="8">
+            <animate attributeName="stroke-opacity" values="0;0;0.35;0;0" keyTimes="0;0.45;0.5;0.62;1" dur="6s" repeatCount="indefinite"/>
+          </rect>
+          <text class="node" x="520" y="52" text-anchor="middle">Signing server</text>
+          <text class="node-sub" x="520" y="70" text-anchor="middle">designed and built</text>
 
-<h3>Talks</h3>
-<ul class="talks">
-  <li><time datetime="2026-01-21">Jan 2026</time> · <a href="https://isarob.org/symposium/programs/arob31/Abstracts.pdf">Multilayer Propagation of Cross-Country Systemic Risk: A Hybrid Model with Horizontal DebtRank and Vertical Thresholds</a><span class="where">AROB-ISBC 2026, Beppu · oral, English</span></li>
-  <li><time datetime="2025-10-18">Oct 2025</time> · <a href="https://hokkaido.ipsj.or.jp/info2025/info2025program.pdf" lang="ja">国際的システミックリスクのマルチレイヤー波及</a><span class="where">IPSJ Hokkaido Symposium, Muroran · poster, Japanese</span></li>
-  <li><time datetime="2025-09-10">Sep 2025</time> · <a href="https://pub.confit.atlas.jp/ja/event/society2025/presentation/N-1-14">Cross-border Financial Distress via Multi-layer DebtRank</a><span class="where">IEICE Society Conference, Okayama · oral, English</span></li>
-  <li><time datetime="2025-01-22">Jan 2025</time> · <a href="https://isarob.org/symposium/programs/arob30/Abstracts.pdf">A Quantitative Analysis of Financial Distress Propagation in International Networks Utilizing DebtRank and a Multi-layer Approach</a><span class="where">AROB-ISBC 2025, Beppu · oral, English · <a href="https://u-hyogo-gsis.org/topics/%E5%8D%9A%E5%A3%AB%E5%89%8D%E6%9C%9F%E8%AA%B2%E7%A8%8B1%E5%B9%B4-%E3%83%81%E3%82%A7%E3%82%B8%E3%83%A5%E3%83%B3%E3%83%92%E3%83%A7%E3%83%B3%E3%81%95%E3%82%93%E3%81%AE%E5%8F%97%E8%B3%9E/">Young Author Award</a> (6 of 443 participants)</span></li>
-</ul>
+          <rect class="box" x="660" y="24" width="160" height="64" rx="8"/>
+          <text class="node" x="740" y="52" text-anchor="middle">HSM</text>
+          <text class="node-sub" x="740" y="70" text-anchor="middle">keys stay in hardware</text>
 
-<h2>Background</h2>
-<ul class="facts">
-  <li><b>University of Hyogo</b> · Master of Information Science (Data and Computational Science) · 2024–2026</li>
-  <li><b>The University of Suwon</b> · B.Eng., Computer Software · 2022–2024 · GPA 4.11/4.5 · Academic Excellence Scholarship, three semesters</li>
-  <li><b>Goldman Sachs Japan Engineering Workshop</b> · 4th place, individual P&amp;L in an FX trading simulation · 2024</li>
-  <li><b>Certifications</b> · Fireblocks Academy certification courses (2026) · JLPT N1 (2021) · Industrial Engineer Information Processing, HRD Korea (2019)</li>
-  <li><b>Languages</b> · Korean (native) · Japanese (JLPT N1) · English (used at work)</li>
-  <li><b>Tools</b> · TypeScript, JavaScript, Python · HSM / PKCS#11, tokenization, Solana, EVM · AWS, NestJS, Next.js, PostgreSQL</li>
-</ul>
+          <rect class="box" x="880" y="24" width="160" height="64" rx="8"/>
+          <text class="node" x="960" y="52" text-anchor="middle">Chain</text>
+          <text class="node-sub" x="960" y="70" text-anchor="middle">broadcast</text>
 
-<h2>Side projects</h2>
-<ul class="facts">
-  <li><a href="https://junhyun-chae.github.io/korean-word/">Kokuin</a> · a web app for learning Korean vocabulary from Japanese, with spaced repetition and handwriting practice. <a href="https://github.com/Junhyun-Chae/korean-word">Source</a></li>
-  <li><a href="https://github.com/Junhyun-Chae/multilayer-debtrank-financial-contagion">Multilayer DebtRank model</a> · the Python code behind the paper.</li>
-</ul>
+          <text class="edge-label ok" x="410" y="46" text-anchor="middle">approved</text>
+          <text class="edge-label" x="850" y="46" text-anchor="middle">signed</text>
+        </svg>
+
+        <svg class="flow-v" viewBox="0 -2 360 408" role="img" aria-label="A transaction is approved on the custody platform, goes through the signing server to the HSM, and the signed transaction is broadcast.">
+          <defs>
+            <marker id="arrow-v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="tip" d="M0 0L10 5L0 10z"/></marker>
+          </defs>
+          <path class="edge" d="M180 52V88" marker-end="url(#arrow-v)"/>
+          <path class="edge" d="M180 140V176" marker-end="url(#arrow-v)"/>
+          <path class="edge" d="M180 228V264" marker-end="url(#arrow-v)"/>
+          <path class="edge" d="M180 316V352" marker-end="url(#arrow-v)"/>
+          <circle class="token" r="4.5">
+            <animateMotion dur="6s" repeatCount="indefinite" path="M180 26V378"/>
+          </circle>
+
+          <rect class="box" x="70" y="0" width="220" height="52" rx="8"/>
+          <text class="node" x="180" y="22" text-anchor="middle">Transaction</text>
+          <text class="node-sub" x="180" y="39" text-anchor="middle">signing request</text>
+
+          <rect class="box" x="70" y="88" width="220" height="52" rx="8"/>
+          <text class="node" x="180" y="110" text-anchor="middle">Custody platform</text>
+          <text class="node-sub" x="180" y="127" text-anchor="middle">policy · approval</text>
+
+          <rect class="box ok" x="70" y="176" width="220" height="52" rx="8"/>
+          <rect class="pulse" x="70" y="176" width="220" height="52" rx="8">
+            <animate attributeName="stroke-opacity" values="0;0;0.35;0;0" keyTimes="0;0.45;0.5;0.62;1" dur="6s" repeatCount="indefinite"/>
+          </rect>
+          <text class="node" x="180" y="198" text-anchor="middle">Signing server</text>
+          <text class="node-sub" x="180" y="215" text-anchor="middle">designed and built</text>
+
+          <rect class="box" x="70" y="264" width="220" height="52" rx="8"/>
+          <text class="node" x="180" y="286" text-anchor="middle">HSM</text>
+          <text class="node-sub" x="180" y="303" text-anchor="middle">keys stay in hardware</text>
+
+          <rect class="box" x="70" y="352" width="220" height="52" rx="8"/>
+          <text class="node" x="180" y="374" text-anchor="middle">Chain</text>
+          <text class="node-sub" x="180" y="391" text-anchor="middle">broadcast</text>
+
+          <text class="edge-label ok" x="192" y="162">approved</text>
+          <text class="edge-label" x="192" y="338">signed</text>
+        </svg>
+
+        <p class="caption">The highlighted step is the signing server I designed and built.</p>
+      </div>
+
+      <section class="sec" id="work">
+        <div class="sec-head">
+          <span class="mono">01 · Work</span>
+          <div>
+            <h2>Custody for financial institutions.</h2>
+            <p>Business Planning Department, InterTrade (TSE: 3747), Tokyo.</p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <span class="mono">Signing server</span>
+            <h3>HSM signing server</h3>
+            <p>A PKCS#11 signing server that lets an institutional custody platform sign with keys held in a customer's HSM. Designed and built by me.</p>
+            <p class="mono tags">pkcs#11 · hsm · custody</p>
+          </div>
+          <div class="card">
+            <span class="mono">Operations</span>
+            <h3>Approval controls for tokens</h3>
+            <p>Pre-signing checks and an approval workflow for token issuance and redemption on a public blockchain, running on AWS.</p>
+            <p class="mono tags">aws · tokenization · approval workflow</p>
+          </div>
+          <div class="card">
+            <span class="mono">Customers</span>
+            <h3>In front of customers and vendors</h3>
+            <p>I build proofs of concept and present technical designs to financial institutions, in Japanese. With overseas custody vendors I work in English on integration issues, and I evaluate custody solutions technically.</p>
+            <p class="mono tags">poc · presentations · vendor integration</p>
+          </div>
+        </div>
+
+        <div class="exp">
+          <div class="exp-org">
+            <h3>InterTrade Co., Ltd.</h3>
+            <span class="mono">Tokyo · Apr 2026 – present</span>
+          </div>
+          <div>
+            <details open>
+              <summary>Software Engineer, Digital Asset Custody &amp; HSM Integration <span class="mono">Jun 2026 – present</span></summary>
+              <ul>
+                <li>Designed and built a PKCS#11 signing server that lets an institutional custody platform sign with keys held in a customer's HSM.</li>
+                <li>Built pre-signing checks and an approval workflow for token issuance and redemption on a public blockchain, running on AWS.</li>
+                <li>Build proofs of concept and present technical designs to financial institutions and their vendors.</li>
+                <li>Work with an overseas custody platform vendor in English on integration issues, and evaluated custody solutions technically.</li>
+              </ul>
+            </details>
+            <details>
+              <summary>Software Engineer, FX Trading Systems <span class="mono">May – Jun 2026</span></summary>
+              <ul>
+                <li>Tested failure scenarios for an FX trading system (root-cause analysis and recovery), and built a Python tool that retrieves daily market rates.</li>
+              </ul>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="research">
+        <div class="sec-head">
+          <span class="mono">02 · Research</span>
+          <div>
+            <h2>How shocks travel between countries.</h2>
+            <p>Master's research at the University of Hyogo with Prof. Hiroyasu Inoue.</p>
+          </div>
+        </div>
+
+        <div class="research">
+          <img src="assets/img/talk.jpg" width="1182" height="665" loading="lazy" alt="Junhyun Chae presenting results of the multilayer systemic risk model">
+          <div class="paper">
+            <span class="mono">Journal article · First author</span>
+            <h3>Multilayer Propagation of Cross-Country Systemic Risk</h3>
+            <p class="by">Junhyun Chae, Hiroyasu Inoue. Journal of Risk and Financial Management 19(3), 197. March 2026.</p>
+            <p>Couples cross-border bank lending with trade for 20 economies, 2000–2023. Looking at both layers changes which countries look systemically important.</p>
+            <div class="stats">
+              <div><b>6 of 443</b><span>Young Author Award, AROB 2025</span></div>
+              <div><b>4 conferences</b><span>Three talks in English</span></div>
+            </div>
+            <p class="line-links">
+              <a href="https://doi.org/10.3390/jrfm19030197">Read the paper</a>
+              <a href="https://github.com/Junhyun-Chae/multilayer-debtrank-financial-contagion">Code</a>
+              <a href="https://u-hyogo-gsis.org/topics/%E5%8D%9A%E5%A3%AB%E5%89%8D%E6%9C%9F%E8%AA%B2%E7%A8%8B1%E5%B9%B4-%E3%83%81%E3%82%A7%E3%82%B8%E3%83%A5%E3%83%B3%E3%83%92%E3%83%A7%E3%83%B3%E3%81%95%E3%82%93%E3%81%AE%E5%8F%97%E8%B3%9E/">Award news</a>
+            </p>
+          </div>
+        </div>
+
+        <ul class="talks" aria-label="Talks">
+          <li><span class="mono">Jan 21, 2026</span><span class="what"><a href="https://isarob.org/symposium/programs/arob31/Abstracts.pdf">Multilayer Propagation of Cross-Country Systemic Risk: A Hybrid Model with Horizontal DebtRank and Vertical Thresholds</a></span><span class="where">AROB-ISBC 2026, Beppu · Oral, English</span></li>
+          <li><span class="mono">Oct 18, 2025</span><span class="what"><a href="https://hokkaido.ipsj.or.jp/info2025/info2025program.pdf" lang="ja">国際的システミックリスクのマルチレイヤー波及</a></span><span class="where">IPSJ Hokkaido Symposium, Muroran · Poster, Japanese</span></li>
+          <li><span class="mono">Sep 10, 2025</span><span class="what"><a href="https://pub.confit.atlas.jp/ja/event/society2025/presentation/N-1-14">Cross-border Financial Distress via Multi-layer DebtRank</a></span><span class="where">IEICE Society Conference, Okayama · Oral, English</span></li>
+          <li><span class="mono">Jan 22, 2025</span><span class="what"><a href="https://isarob.org/symposium/programs/arob30/Abstracts.pdf">A Quantitative Analysis of Financial Distress Propagation in International Networks Utilizing DebtRank and a Multi-layer Approach</a></span><span class="where">AROB-ISBC 2025, Beppu · Oral, English · Young Author Award</span></li>
+        </ul>
+        <p class="thesis">Master's thesis (2026): Quantitative Analysis of Financial Risk Propagation in International Networks Using Multilayer DebtRank.</p>
+      </section>
+
+      <section class="sec" id="about">
+        <div class="sec-head">
+          <span class="mono">03 · Background</span>
+          <h2>Seoul, Kobe, Tokyo.</h2>
+        </div>
+
+        <div class="bg">
+          <div>
+            <span class="mono">Education</span>
+            <ul>
+              <li><b>University of Hyogo</b><span>Master of Information Science (Data and Computational Science) · 2024–2026</span></li>
+              <li><b>The University of Suwon</b><span>B.Eng., Computer Software · 2022–2024 · GPA 4.11/4.5</span></li>
+            </ul>
+          </div>
+          <div>
+            <span class="mono">Recognition</span>
+            <ul>
+              <li><b>Young Author Award</b><span>AROB-ISBC 2025 · one of six among 443 participants</span></li>
+              <li><b>Goldman Sachs Japan Engineering Workshop</b><span>4th place, individual P&amp;L in an FX trading simulation · 2024</span></li>
+              <li><b>Academic Excellence Scholarship</b><span>The University of Suwon · three semesters, 2022–2023</span></li>
+            </ul>
+          </div>
+          <div>
+            <span class="mono">Certifications</span>
+            <ul>
+              <li><b>Fireblocks Academy</b><span>Certification courses · 2026</span></li>
+              <li><b>JLPT N1</b><span>Japanese-Language Proficiency Test · 2021</span></li>
+              <li><b>Industrial Engineer Information Processing</b><span>HRD Korea · 2019</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <span class="mono">Skills</span>
+          <p class="skills"><span>Custody</span> <i>·</i> <span>HSM / PKCS#11</span> <i>·</i> <span>Tokenization</span> <i>·</i> <span>Solana</span> <i>·</i> <span>EVM</span> <i>·</i> <span>TypeScript</span> <i>·</i> <span>JavaScript</span> <i>·</i> <span>NestJS</span> <i>·</i> <span>Next.js</span> <i>·</i> <span>PostgreSQL</span> <i>·</i> <span>Python</span> <i>·</i> <span>AWS</span> <i>·</i> <span>Network analysis</span> <i>·</i> <span>DebtRank</span></p>
+        </div>
+
+        <div class="row projects">
+          <span class="mono">Projects</span>
+          <ul>
+            <li><a href="https://github.com/Junhyun-Chae/multilayer-debtrank-financial-contagion">Multilayer DebtRank model</a><span>Open-source Python code behind the JRFM paper.</span></li>
+            <li><a href="https://junhyun-chae.github.io/korean-word/">Kokuin</a><span>A web app for learning Korean vocabulary from Japanese: spaced repetition and handwriting practice.</span></li>
+          </ul>
+        </div>
+
+        <div class="life">
+          <img src="assets/img/offclock.jpg" width="1012" height="1124" loading="lazy" alt="Junhyun Chae smiling outdoors with peace signs">
+          <div>
+            <ul class="route">
+              <li><b>Seoul</b><span>Grew up · studied computer engineering</span></li>
+              <li><b>Kobe</b><span>Master's · first paper and first award</span></li>
+              <li><b>Tokyo</b><span>Digital asset custody at InterTrade</span></li>
+            </ul>
+            <p>Korean is my first language, Japanese is my working language, and English is how I work with vendors overseas.</p>
+          </div>
+        </div>
+      </section>
+
+      {% if site.posts.size > 0 %}
+      <section class="sec" id="writing">
+        <div class="sec-head">
+          <span class="mono">04 · Writing</span>
+          <h2>Notes from the work.</h2>
+        </div>
+        <ul class="talks posts" aria-label="Posts">
+          {% for post in site.posts limit: 5 %}
+          <li><span class="mono">{{ post.date | date: "%b %-d, %Y" }}</span><span class="what"><a href="{{ post.url | relative_url }}"{% if post.lang == 'ja' %} lang="ja"{% endif %}>{{ post.title }}</a></span><span class="where">{% if post.lang == 'ja' %}Japanese{% else %}English{% endif %}</span></li>
+          {% endfor %}
+        </ul>
+        {% if site.posts.size > 5 %}<p class="thesis"><a href="{{ '/writing/' | relative_url }}">All posts</a></p>{% endif %}
+      </section>
+      {% endif %}
+
+      <section class="contact" id="contact">
+        <span class="mono">{% if site.posts.size > 0 %}05{% else %}04{% endif %} · Contact</span>
+        <div><a class="mail" href="mailto:smiledanny@gmail.com">smiledanny@gmail.com</a></div>
+        <p class="line-links">
+          <a href="https://www.linkedin.com/in/junhyunchae">LinkedIn</a>
+          <a href="https://github.com/Junhyun-Chae">GitHub</a>
+          <a href="https://orcid.org/0009-0007-5531-7071">ORCID</a>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 Junhyun Chae</span>
+      <span>Tokyo</span>
+    </footer>
+  </div>
+</body>
+</html>

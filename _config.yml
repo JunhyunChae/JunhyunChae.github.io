@@ -13,5 +13,3 @@ exclude:
 defaults:
   - scope: { path: "", type: posts }
     values: { layout: post, lang: en }
-  - scope: { path: "ja" }
-    values: { lang: ja }
