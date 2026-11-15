@@ -8,8 +8,6 @@ markdown: kramdown
 permalink: /writing/:year/:month/:title/
 exclude:
   - README.md
-  - NOTES.local.md
-  - _mock
 defaults:
   - scope: { path: "", type: posts }
     values: { layout: post, lang: en }
