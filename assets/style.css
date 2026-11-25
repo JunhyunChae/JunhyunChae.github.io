@@ -654,6 +654,27 @@ footer {
   border: 0;
   background: none;
 }
+.article table {
+  width: 100%;
+  margin: 24px 0;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.article th,
+.article td {
+  padding: 10px 12px 10px 0;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.article th {
+  color: var(--mute);
+  font-weight: 500;
+}
+.article td code {
+  overflow-wrap: anywhere;
+}
 .article .back {
   margin-top: 56px;
 }
